@@ -13,12 +13,14 @@
 	new_dialog(title, action, ...)
 		title	: <string>
 		action	: <function>
-		...		: <string> / 
+		...		: <string> / <table>
 
 ]]--
-local Options = {
-					"IP Address",
-					"Port"
+local StringInput =	"Input 1"
+
+local TableInput =	{
+					 name  = "Input 2"
+					,value = "1234"
 				}
 
 local function Window_LC(ip, port)
@@ -27,4 +29,4 @@ local function Window_LC(ip, port)
 	Splash_Screen:append("Port       : " .. port)
 end
 
-new_dialog("Enter IP address", Window_LC, Options[1], Options[2]);
+new_dialog("Title", Window_LC, StringInput, TableInput);
