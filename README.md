@@ -1,15 +1,16 @@
 # Wireshark Lua API
 
 ## `TextWindow`
+**Description:**<br>
 Creates & displays a new text window.
 
-### Usage:<br>
+**Usage:**<br>
 `TextWindow.new([<string>])`<br>
 
-### Default value:<br>
+**Default value:**<br>
 *Untitled Window*
 
-### Methods of `TextWindow` Object.
+**Methods of `TextWindow` Object**
 |            Function            |                        Definition                        |
 |--------------------------------|----------------------------------------------------------|
 | `set_atclose(<function>)`        | A function to call when `TextWindow` is closed.          |
@@ -23,6 +24,7 @@ Creates & displays a new text window.
 | `add_button(<string>, <function>)` | Adds button to the window.                               |
 
 ## `new_dialog(<string>, <function>, <...>)`
+**Description:**
 Displays a dialog prompting for user input with `OK` & `Cancel` buttons.
 
 * `string` will be the title of the window.<br>
