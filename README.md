@@ -65,12 +65,12 @@ new_dialog("Title", LC, input1, input2);
 
 Example-3: `new_dialog` with inputs passed as parameters.
 ```Lua
-local StringInput =	"Input 1"
+local StringInput = "Input 1"
 
-local TableInput =	{
-					 name  = "Input 2"
-					,value = "1234"
-				}
+local TableInput = {
+                         name  = "Input 2"
+                        ,value = "1234"
+                   }
 
 local function Window_LC(ip, port)
 	local Splash_Screen = TextWindow.new("Info");
@@ -79,6 +79,10 @@ local function Window_LC(ip, port)
 end
 
 new_dialog("Title", Window_LC, StringInput, TableInput);
+--[[
+    The values of "StringInput" & "TableInput" are passed to
+    Window_LC function's "ip" & "port" parameters.
+]]--
 ```
 <p align="center">
     <img src="rsc/new_dialog_function_parameters.png" width=50% height=50%>
