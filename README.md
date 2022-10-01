@@ -21,7 +21,6 @@ Creates & displays a new text window.
 | `close()`                      | Closes the window.                                       |
 | `set_editable([bool])`         | Default value: *true*<br>Allows the text to be editable. |
 | `add_button(string, function)` | Adds button to the window.                               |
----
 
 ## `new_dialog(string, function, ...)`
 Displays a dialog prompting for user input with `OK` & `Cancel` buttons.
@@ -45,15 +44,15 @@ new_dialog("Title", LC, "Input 1", "Input 2");
 
 `new_dialog` with input labels from a table to make use of prefilled texts.
 ```Lua
-local input1 =	{
-					 name  = "Input 1"
-					,value = "192.168.0.1"
-				}
+local input1 = {
+                     name  = "Input 1"
+                    ,value = "192.168.0.1"
+               }
 
-local input2 =	{
-					 name  = "Input 2"
-					,value = "1234"
-				}
+local input2 = {
+                     name  = "Input 2"
+                    ,value = "1234"
+               }
 
 local function LC() end
 new_dialog("Title", LC, input1, input2);
