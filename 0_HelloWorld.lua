@@ -11,10 +11,13 @@
 		  	Ctrl + Shift + L
 
 ]]--
-local Title = "Luke Chikkala's Wireshark Plugins"
-local msg   = "Hello World"
+local Win_LC = TextWindow.new("Title");
 
-if gui_enabled() == true then
-	local Win_LC = TextWindow.new(Title);
-	Win_LC:set(msg);
+local function EmptyFunction()
+	Win_LC:append("\n" .. os.date())
 end
+
+Win_LC:set("\nMessage")
+Win_LC:prepend("\nPrepended Text")
+Win_LC:set_editable(true)
+Win_LC:add_button("Button Label", EmptyFunction)

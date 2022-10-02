@@ -1,30 +1,45 @@
 # Wireshark Lua API
 
-## `TextWindow`
+## `TextWindow.new([<string>])`
 **Description:**<br>
-Creates & displays a new text window.
-
-**Usage:**<br>
-`TextWindow.new([<string>])`<br>
+Creates & displays a new text window.<br>
+* `string` will be the title of the window.<br>
 
 **Default value:**<br>
 *Untitled Window*
 
 **Methods of `TextWindow` Object**
-|            Function            |                        Definition                        |
-|--------------------------------|----------------------------------------------------------|
-| `set_atclose(<function>)`        | A function to call when `TextWindow` is closed.          |
-| `set(<string>)`                  | Sets the text to be displayed in the TextWindow.         |
+|              Function              |                        Definition                        |
+|------------------------------------|----------------------------------------------------------|
+| `set_atclose(<function>)`          | A function to call when `TextWindow` is closed.          |
+| `set(<string>)`                    | Sets the text to be displayed in the TextWindow.         |
 | `append(<string>)`                 | Appends text to the current window.                      |
 | `prepend(<string>)`                | Prepends text to the current window.                     |
-| `clear()`                      | Erases all text in the window.                           |
-| `get_text()`                   | Get text of the window.                                  |
-| `close()`                      | Closes the window.                                       |
-| `set_editable([<bool>])`         | Default value: *true*<br>Allows the text to be editable. |
+| `clear()`                          | Erases all text in the window.                           |
+| `get_text()`                       | Get text of the window.                                  |
+| `close()`                          | Closes the window.                                       |
+| `set_editable([<bool>])`           | Default value: *true*<br>Allows the text to be editable. |
 | `add_button(<string>, <function>)` | Adds button to the window.                               |
 
+### Examples
+```Lua
+local Win_LC = TextWindow.new("Title");
+
+local function EmptyFunction()
+	Win_LC:append("\n" .. os.date())
+end
+
+Win_LC:set("\nMessage")
+Win_LC:prepend("\nPrepended Text")
+Win_LC:set_editable(true)
+Win_LC:add_button("Button Label", EmptyFunction)
+```
+<p align="center">
+    <img src="rsc/TextWindow.png" width=50% height=50%>
+</p>
+
 ## `new_dialog(<string>, <function>, <...>)`
-**Description:**
+**Description:**<br>
 Displays a dialog prompting for user input with `OK` & `Cancel` buttons.
 
 * `string` will be the title of the window.<br>
@@ -93,3 +108,5 @@ new_dialog("Title", Window_LC, StringInput, TableInput);
 <p align="center">
     <img src="rsc/new_dialog_function_parameters_output.png" width=50% height=50%>
 </p>
+
+## `register_menu`
