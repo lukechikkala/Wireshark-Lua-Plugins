@@ -63,85 +63,89 @@ The length's default value is `tvb:captured_len()`; basically the entire length 
 **`Tvb` Members**
 
 ---
+
 <table>
     <tr>
-        <td>Method</td>
-        <td>Arguments</td>
-        <td>Description</td>
-        <td>Return</td>
+        <td align="center"><b>Method</b></td>
+        <td align="center"><b>Arguments</b></td>
+        <td align="center"><b>Description</b></td>
+        <td align="center"><b>Return</b></td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:__tostring()</code></td>
-        <td>Convert the bytes of a Tvb into a string.<br>This is primarily useful for debugging purposes since the string will be truncated if it is too long.</td>
+        <td>Convert the bytes of a <code>Tvb</code> into a string.<br>
+        This is primarily useful for debugging purposes since the string will be truncated if it is too long.</td>
         <td>The string.</td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:reported_len()</code></td>
-        <td>Obtain the reported length (length on the network) of a Tvb.</td>
-        <td>The reported length of the Tvb.</td>
+        <td>Obtain the reported length (length on the network) of a <code>Tvb</code>.</td>
+        <td>The reported length of the <code>Tvb</code>.</td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:captured_len()</code></td>
-        <td>Obtain the captured length (amount saved in the capture process) of a Tvb.</td>
-        <td>The captured length of the Tvb.</td>
+        <td>Obtain the captured length (amount saved in the capture process) of a <code>Tvb</code>.</td>
+        <td>The captured length of the <code>Tvb</code>.</td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:len()</code></td>
-        <td>Obtain the captured length (amount saved in the capture process) of a Tvb.<br>Same as captured_len; kept only for backwards compatibility</td>
-        <td>The captured length of the Tvb.</td>
+        <td>Obtain the captured length (amount saved in the capture process) of a <code>Tvb</code>.<br>
+        Same as <code>captured_len</code>; kept only for backwards compatibility</td>
+        <td>The captured length of the <code>Tvb</code>.</td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:reported_length_remaining()</code></td>
-        <td>Obtain the reported (not captured) length of packet data to end of a Tvb or 0 if the offset is beyond the end of the Tvb.</td>
-        <td>The captured length of the Tvb.</td>
+        <td>Obtain the reported (not captured) length of packet data to end of a <code>Tvb</code> or <code>0</code> if the offset is beyond the end of the <code>Tvb</code>.</td>
+        <td>The captured length of the <code>Tvb</code>.</td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:bytes([int], [int])</code></td>
-        <td>Obtain a ByteArray from a Tvb.</td>
+        <td>Obtain a ByteArray from a <code>Tvb</code>.</td>
         <td>The ByteArray object or nil.</td>
     </tr>
     <tr>
         <td></td>
         <td><code>[offset]</code></td>
-        <td>The offset (in octets) from the beginning of the Tvb.<br>Default: <code>0</code>.</td>
+        <td>The offset (in octets) from the beginning of the <code>Tvb</code>.<br>Default: <code>0</code>.</td>
         <td></td>
     </tr>
     <tr>
         <td></td>
         <td><code>[length]</code></td>
-        <td>The offset (in octets) from the beginning of the Tvb.<br>Default: <code>0</code>.</td>
+        <td>The offset (in octets) from the beginning of the <code>Tvb</code>.<br>Default: <code>0</code>.</td>
         <td></td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:offset()</code></td>
-        <td>Returns the raw offset (from the beginning of the source Tvb) of a sub Tvb.</td>
-        <td>The raw offset of the Tvb.</td>
+        <td>Returns the raw offset (from the beginning of the source <code>Tvb</code>) of a sub <code>Tvb</code>.</td>
+        <td>The raw offset of the <code>Tvb</code>.</td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:__call()</code></td>
-        <td>Equivalent to tvb:range(…)</td>
+        <td>Equivalent to <code>tvb:range(…)</code></td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:range([int], [int])</code></td>
-        <td>Creates a TvbRange from this Tvb.</td>
-        <td>The TvbRange</td>
+        <td>Creates a <code>TvbRange</code> from this <code>Tvb</code>.</td>
+        <td>The <code>TvbRange</code></td>
     </tr>
     <tr>
         <td></td>
         <td><code>[offset]</code></td>
-        <td>The offset (in octets) from the beginning of the Tvb.<br>Default: <code>0</code>.</td>
+        <td>The offset (in octets) from the beginning of the <code>Tvb</code>.<br>Default: <code>0</code>.</td>
         <td></td>
     </tr>
     <tr>
         <td></td>
         <td><code>[length]</code></td>
-        <td>The length (in octets) of the range.<br>Default: <code>-1</code>, (specifies remaining bytes in the Tvb).</td>
+        <td>The length (in octets) of the range.<br>
+        Default: <code>-1</code> (specifies remaining bytes in the <code>Tvb</code>).</td>
         <td></td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:raw([int], [int])</code></td>
-        <td>Obtain a Lua string of the binary bytes in a Tvb.</td>
-        <td>A Lua string of the binary bytes in the Tvb.</td>
+        <td>Obtain a Lua string of the binary bytes in a <code>Tvb</code>.</td>
+        <td>A Lua string of the binary bytes in the <code>Tvb</code>.</td>
     </tr>
     <tr>
         <td></td>
@@ -152,15 +156,18 @@ The length's default value is `tvb:captured_len()`; basically the entire length 
     <tr>
         <td></td>
         <td><code>[length]</code></td>
-        <td>The length of the segment to get.<br>Default: <code>-1</code>, (remaining bytes) in the Tvb.</td>
+        <td>The length of the segment to get.<br>
+        Default: <code>-1</code> (remaining bytes) in the <code>Tvb</code>.</td>
         <td></td>
     </tr>
     <tr>
         <td colspan=2><code>tvb:__eq()</code></td>
         <td></td>
-        <td>Checks whether contents of two Tvbs are equal.</td>
+        <td>Checks whether contents of two <code>Tvb</code>s are equal.</td>
     </tr>
 </table>
+
+
 ---
 
 ### `<Pinfo>`
