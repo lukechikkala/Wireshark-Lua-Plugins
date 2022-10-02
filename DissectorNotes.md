@@ -60,10 +60,9 @@ It must be called with an offset and length as it's optional arguments.<br>
 The offset's default value is `0`.<br>
 The length's default value is `tvb:captured_len()`; basically the entire length of the packet.
 
-**`Tvb` Members**
-
----
-
+### Tvb Members
+<details>
+<summary>(click to expand)</summary>
 <table>
     <tr>
         <td align="center"><b>Method</b></td>
@@ -166,9 +165,7 @@ The length's default value is `tvb:captured_len()`; basically the entire length 
         <td>Checks whether contents of two <code>Tvb</code>s are equal.</td>
     </tr>
 </table>
-
-
----
+</details><br>
 
 ### `<Pinfo>`
 An object that represents packet's information.
