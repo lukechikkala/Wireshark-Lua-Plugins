@@ -165,7 +165,7 @@ The length's default value is `tvb:captured_len()`; basically the entire length 
         <td>Checks whether contents of two <code>Tvb</code>s are equal.</td>
     </tr>
 </table>
-</details><br>
+</details>
 
 ### `<Pinfo>`
 An object that represents packet's information.
