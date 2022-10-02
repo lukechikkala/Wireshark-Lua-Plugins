@@ -60,7 +60,7 @@ It must be called with an offset and length as it's optional arguments.<br>
 The offset's default value is `0`.<br>
 The length's default value is `tvb:captured_len()`; basically the entire length of the packet.
 
-### Tvb Members
+### `<Tvb>` Members
 <details>
 <summary>(click to expand)</summary>
 <table>
@@ -167,5 +167,182 @@ The length's default value is `tvb:captured_len()`; basically the entire length 
 </table>
 </details>
 
-### `<Pinfo>`
+### `<Pinfo>` Members
 An object that represents packet's information.
+<details>
+<summary>(click to expand)</summary>
+<table>
+    <tr>
+        <td align="center"><b>Method</b></td>
+        <td align="center"><b>Mode</b></td>
+        <td align="center"><b>Description</b></td>
+    </tr>
+    <tr>
+        <td><code>pinfo.visited</code></td>
+        <td>Retrieve only</td>
+        <td>Whether this packet has been already visited.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.number</code></td>
+        <td>Retrieve only</td>
+        <td>The number of this packet in the current file.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.len</code></td>
+        <td>Retrieve only</td>
+        <td>The length of the frame.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.caplen</code></td>
+        <td>Retrieve only</td>
+        <td>The captured length of the frame.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.abs_ts</code></td>
+        <td>Retrieve only</td>
+        <td>When the packet was captured.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.rel_ts</code></td>
+        <td>Retrieve only</td>
+        <td>Number of seconds passed since beginning of capture.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.delta_ts</code></td>
+        <td>Retrieve only</td>
+        <td>Number of seconds passed since the last captured packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.delta_dis_ts</code></td>
+        <td>Retrieve only</td>
+        <td>Number of seconds passed since the last displayed packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.curr_proto</code></td>
+        <td>Retrieve only</td>
+        <td>Which Protocol are we dissecting.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.can_desegment</code></td>
+        <td>Retrieve or assign</td>
+        <td>Set if this segment could be desegmented.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.desegment_len</code></td>
+        <td>Retrieve or assign</td>
+        <td>Estimated number of additional bytes required for completing the PDU.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.desegment_offset</code></td>
+        <td>Retrieve or assign</td>
+        <td>Offset in the tvbuff at which the dissector will continue processing when next called.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.fragmented</code></td>
+        <td>Retrieve only</td>
+        <td>If the protocol is only a fragment.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.in_error_pkt</code></td>
+        <td>Retrieve only</td>
+        <td>If we’re inside an error packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.match_uint</code></td>
+        <td>Retrieve only</td>
+        <td>Matched uint for calling subdissector from table.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.match_string</code></td>
+        <td>Retrieve only</td>
+        <td>Matched string for calling subdissector from table.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.port_type</code></td>
+        <td>Retrieve or assign</td>
+        <td>Type of Port of <code>.src_port</code> and <code>.dst_port</code>.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.src_port</code></td>
+        <td>Retrieve or assign</td>
+        <td>Source Port of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.dst_port</code></td>
+        <td>Retrieve or assign</td>
+        <td>Destination Port of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.dl_src</code></td>
+        <td>Retrieve or assign</td>
+        <td>Data Link Source Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.dl_dst</code></td>
+        <td>Retrieve or assign</td>
+        <td>Data Link Destination Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.net_src</code></td>
+        <td>Retrieve or assign</td>
+        <td>Network Layer Source Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.net_dst</code></td>
+        <td>Retrieve or assign</td>
+        <td>Network Layer Destination Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.src</code></td>
+        <td>Retrieve or assign</td>
+        <td>Source Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.dst</code></td>
+        <td>Retrieve or assign</td>
+        <td>Destination Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.p2p_dir</code></td>
+        <td>Retrieve or assign</td>
+        <td>Direction of this Packet. (incoming / outgoing)</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.match</code></td>
+        <td>Retrieve only</td>
+        <td>Port/Data we are matching.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.columns</code></td>
+        <td>Retrieve only</td>
+        <td>Access to the packet list columns.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.cols</code></td>
+        <td>Retrieve only</td>
+        <td>Access to the packet list columns (equivalent to pinfo.columns).</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.private</code></td>
+        <td>Retrieve only</td>
+        <td>Access to the private table entries.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.hi</code></td>
+        <td>Retrieve or assign</td>
+        <td>Higher Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.lo</code></td>
+        <td>Retrieve only</td>
+        <td>Lower Address of this Packet.</td>
+    </tr>
+    <tr>
+        <td><code>pinfo.conversation</code></td>
+        <td>Assign only</td>
+        <td>Sets the packet conversation to the given Proto object.</td>
+    </tr>
+</table>
+<br>
+</details>
+
