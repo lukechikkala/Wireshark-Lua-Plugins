@@ -1,0 +1,22 @@
+.title{
+    font-family: Arial;
+    color:#FFC000;
+}
+
+.programlisting{
+    font-family: Consolas;
+    color: #00ff00;
+}
+
+body{
+    font-family: Arial;
+    color: #ffffff;
+}
+
+code{
+    font-family: Consolas;
+}
+
+.literal{
+    color: #00ff9f;
+}
