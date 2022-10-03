@@ -442,3 +442,10 @@ The `<TreeItem>:add()` can still be called to return the objects, but info is no
 
 
 
+# Additional Resources
+* [Creating a Wireshark dissector in Lua](https://mika-s.github.io/wireshark/lua/dissector/2017/11/04/creating-a-wireshark-dissector-in-lua-1.html) by Mika's Tech Blog
+* [Wireshark Dissector Tutorial](https://www.golinuxcloud.com/wireshark-dissector-tutorial/) by GoLinuxCloud
+* [Introduction to dissecting protocols using wireshark Lua](https://www.youtube.com/watch?v=T8yRoh2Wp5A) by The Mind Grid
+
+# Support Tools
+* [Excel to HTML](https://tableconvert.com/excel-to-html)
