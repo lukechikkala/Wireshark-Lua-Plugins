@@ -371,3 +371,74 @@ Node
 A Tree object is not always needed to be added.<br>
 The `<TreeItem>:add()` can still be called to return the objects, but info is not added to the tree.<br>
 `TreeItem.visible` attribute will retrieve the state.
+
+**Members**
+<details>
+<summary>(click to expand)</summary>
+<table>
+    <tr>
+        <td align="center"><b>Method</b></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:add_packet_field(protofield, [tvbrange], encoding, [label]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:add([protofield], [tvbrange], [value], [label]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:add_le([protofield], [tvbrange], [value], [label]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:set_text(text</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:append_text(text</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:prepend_text(text</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:add_expert_info([group], [severity], [text]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:add_proto_expert_info(expert, [text]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:add_tvb_expert_info(expert, tvb, [text]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:set_generated([bool]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:set_hidden([bool]</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:set_len(len</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:referenced(protofield</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem:__tostring(</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem.text</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem.visible</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem.generated</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem.hidden</code></td>
+    </tr>
+    <tr>
+        <td><code>treeitem.len</code></td>
+    </tr>
+</table>
+</details>
+
+
+
+
