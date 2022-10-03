@@ -1,5 +1,10 @@
 # Writing a Packet Dissector
 
+## Types of Dissections
+Dissection
+Heuristic Dissection
+Post Dissection
+
 ## Setup Wireshark to Look for new Protocol
 Create a variable and assign the `Proto()` function.
 ```Lua
@@ -53,14 +58,14 @@ function MyDissector.dissector(
                                )
 ```
 ### `<Tvb>`
-This is an object that represents the packet's buffer.<br>
+An object that represents packet's buffer.<br>
 It is passed as an argument to listeners and dissectors.<br>
 It is used to extract information from the packet's data.<br>
 It must be called with an offset and length as it's optional arguments.<br>
 The offset's default value is `0`.<br>
-The length's default value is `tvb:captured_len()`; basically the entire length of the packet.
+The length's default value is `tvb:captured_len()`; basically the entire length of the packet.<br>
 
-### `<Tvb>` Members
+**Members**
 <details>
 <summary>(click to expand)</summary>
 <table>
@@ -167,8 +172,12 @@ The length's default value is `tvb:captured_len()`; basically the entire length 
 </table>
 </details>
 
-### `<Pinfo>` Members
+> [Source](https://www.wireshark.org/docs/wsdg_html_chunked/lua_module_Tvb.html#lua_class_Tvb:~:text=11.8.2.-,Tvb,-A%20Tvb%20represents)
+
+### `<Pinfo>`
 An object that represents packet's information.
+
+**Members**
 <details>
 <summary>(click to expand)</summary>
 <table>
@@ -346,3 +355,19 @@ An object that represents packet's information.
 <br>
 </details>
 
+> [Source](https://www.wireshark.org/docs/wsdg_html_chunked/lua_module_Pinfo.html#lua_class_Pinfo:~:text=11.5.5.-,Pinfo,-Packet%20information.)
+
+### `<TreeItem>`
+An object that represents information in packet details pane.<br>
+It represents a node in the tree.<br>
+A node can have sub-nodes and a list of children.
+```
+Node
+  ⤷ Sub-Node
+    Child 1
+    Child 2
+      ⤷ Sub-Child 1
+```
+A Tree object is not always needed to be added.<br>
+The `<TreeItem>:add()` can still be called to return the objects, but info is not added to the tree.<br>
+`TreeItem.visible` attribute will retrieve the state.
